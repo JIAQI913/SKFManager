@@ -1,0 +1,70 @@
+#menubar{     
+               width:auto;height:45px;     
+               /*margin:上下 左右*/     
+               margin:50px auto;     
+               border-radius:10px;     
+               /*html + css3 渐变画图 */     
+                   background-image:-webkit-linear-gradient(rgba(41,41,41,0.75) 0% ,rgba(54,54,54,0.72) 50%,rgba(24,23,23,0.94) 51%);     
+               box-shadow:1px 1px 33px #fff;/*设计阴影的*/     
+           }     
+           #menubar ul
+           {
+           	padding-left: 25%;
+           }
+           #menubar ul li     
+           {  
+               width:127px; height:45px;     
+               list-style:none;/*去掉圆点*/     
+               float:left;/*水平显示*/     
+               color:white;/* #fff */     
+               font-size:18px;     
+               font-family:"微软雅黑";     
+               text-align:center;     
+               line-height:45px;/* 行高跟 高度一致时，竖直居中*/     
+               border-right:1px solid #000;/*右边框*/     
+           }     
+           #menubar ul li a     
+           {   
+               color:white;/* #fff */     
+               font-size:18px;     
+               font-family:"微软雅黑";     
+               text-decoration:none;     
+           }     
+           #menubar ul li:hover     
+           {     
+               background:rgba(10,5,5,0.45);     
+           }     
+           #menubar ul li.first:hover     
+           {     
+               border-radius:10px 0px 0px 10px;/*左上 左下 圆弧显示 */     
+           }     
+           #menubar ul li.last:hover     
+           {     
+               border-radius:0px 10px 10px 0px;/*右上 右下 圆弧显示 */     
+           }     
+           #menubar ul li ul li      
+           {     
+               border:none;     
+               border-top:1px solid #989898;     
+               background:rgba(10,5,5,0.45);/*颜色透明度 */     
+               border-radius:10px;     
+           }     
+           #menubar ul li ul     
+           {     
+               display:none;/*不显示*/     
+           }     
+           #menubar ul li ul li:hover     
+           {     
+               background:rgba(10,5,5,0.8);/*颜色透明度 */     
+               border-radius:10px;     
+           }     
+           #menubar ul li:hover ul     
+           {     
+               display:block;     
+               -webkit-animation:roll 1s ease;/*roll 旋转名称，1s旋转效果 */     
+           }     
+           @-webkit-keyframes roll /*roll旋转名称与上面一致*/     
+           {     
+               0% {-webkit-transform:rotate(0deg);}     
+               100% {-webkit-transform:rotate(360deg);}     
+           }
