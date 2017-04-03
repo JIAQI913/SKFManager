@@ -11,19 +11,18 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.gson.Gson;
 import com.group12.domain.action.DataFormat;
-import com.group12.domain.entity.Student;
+import com.group12.domain.entity.Parent;
 import com.group12.domain.entity.User;
-import com.group12.domain.service.StudentService;
+import com.group12.domain.service.ParentService;
 
 @Controller
-public class MCheckStudentInfoController {
+public class ParentInfo {
 	@Autowired
-	StudentService studentService;
+	ParentService parentService;
 	
-	@RequestMapping("/getMCheckStudentInfo")
-	public ModelAndView getMCheckStudentInfo(HttpServletRequest req, HttpServletResponse resp){
+	@RequestMapping("/getParentInfo")
+	public ModelAndView getParentInfo(HttpServletRequest req, HttpServletResponse resp){
 		HttpSession session = req.getSession();
 		User user=(User) session.getAttribute("USER");
 		ModelAndView modelAndView = new ModelAndView();
@@ -32,16 +31,16 @@ public class MCheckStudentInfoController {
 			return modelAndView;
 		}
 		if(user.getStuNum()==null){
-			modelAndView.setViewName("MCheckStudentInfo");
-			List<Student> list=studentService.getAllStudent();
-//			int size=list.size();
-//			System.out.println("List size="+size);
-//			for(int i=0; i<size; i++){
-//				System.out.println(list.get(i).getStuFname());
-//			}
+			modelAndView.setViewName("MCheckParentInfo");
+			List<Parent> list=parentService.getAllParent();
 			String data=DataFormat.toFrontformat(list);
-			modelAndView.addObject("StudnetList", data);
-			return modelAndView;
+			modelAndView.addObject("ParentList", data);
+		}
+		else{
+			modelAndView.setViewName("ParentInfo");
+			List<Parent> list=parentService.getParentS(user.getStuNum());
+			String data=DataFormat.toFrontformat(list);
+			modelAndView.addObject("ParentList", data);
 		}
 		return modelAndView;
 	}

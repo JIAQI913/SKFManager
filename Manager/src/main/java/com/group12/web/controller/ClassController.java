@@ -11,37 +11,35 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.google.gson.Gson;
 import com.group12.domain.action.DataFormat;
-import com.group12.domain.entity.Student;
+import com.group12.domain.entity.Class;
 import com.group12.domain.entity.User;
-import com.group12.domain.service.StudentService;
+import com.group12.domain.service.ClassService;
 
 @Controller
-public class MCheckStudentInfoController {
+public class ClassController {
 	@Autowired
-	StudentService studentService;
+	ClassService classService;
 	
-	@RequestMapping("/getMCheckStudentInfo")
-	public ModelAndView getMCheckStudentInfo(HttpServletRequest req, HttpServletResponse resp){
+	@RequestMapping("/getClass")
+	public ModelAndView getMCheckClass(HttpServletRequest req, HttpServletResponse resp){
 		HttpSession session = req.getSession();
 		User user=(User) session.getAttribute("USER");
+		List<Class> list=classService.getAllClass();
 		ModelAndView modelAndView = new ModelAndView();
 		modelAndView.setViewName("Index");
 		if(user==null){
 			return modelAndView;
 		}
 		if(user.getStuNum()==null){
-			modelAndView.setViewName("MCheckStudentInfo");
-			List<Student> list=studentService.getAllStudent();
-//			int size=list.size();
-//			System.out.println("List size="+size);
-//			for(int i=0; i<size; i++){
-//				System.out.println(list.get(i).getStuFname());
-//			}
+			modelAndView.setViewName("MCheckClass");
 			String data=DataFormat.toFrontformat(list);
-			modelAndView.addObject("StudnetList", data);
-			return modelAndView;
+			modelAndView.addObject("ClassList", data);
+		}
+		else{
+			modelAndView.setViewName("Class");
+			String data=DataFormat.toFrontformat(list);
+			modelAndView.addObject("ClassList", data);
 		}
 		return modelAndView;
 	}

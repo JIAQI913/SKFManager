@@ -19,7 +19,12 @@ public class ResetPasswordController {
 	UserService userService;
 	
 	@RequestMapping("/getResetPassword")
-	public String getResetPassword(){
+	public String getResetPassword(HttpServletRequest req, HttpServletResponse resp){
+		HttpSession session = req.getSession();
+		User user=(User) session.getAttribute("USER");
+		if(user==null){
+			return "Index";
+		}
 		return "ResetPassword";
 	}
 	
@@ -33,9 +38,9 @@ public class ResetPasswordController {
 		if(user==null){
 			return "Index";
 		}
-		System.out.println(user.getUserPassword());
-		System.out.println(oldPassword);
-		System.out.println(newPassword);
+//		System.out.println(user.getUserPassword());
+//		System.out.println(oldPassword);
+//		System.out.println(newPassword);
 		if(user.getUserPassword().equals(oldPassword)){
 			user.setUserPassword(newPassword);
 			userService.changePassword(user);

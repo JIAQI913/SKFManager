@@ -29,8 +29,12 @@ public class MCheckClassController {
 		User user=(User) session.getAttribute("USER");
 		List<Class> list=classService.getAllClass();
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("MCheckClass");
+		modelAndView.setViewName("Index");
+		if(user==null){
+			return modelAndView;
+		}
 		if(user.getStuNum()==null){
+			modelAndView.setViewName("MCheckClass");
 			String data=DataFormat.toFrontformat(list);
 			modelAndView.addObject("ClassList", data);
 		}

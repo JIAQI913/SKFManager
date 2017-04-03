@@ -91,8 +91,9 @@
 			function(){
 			var PayList=${PayList};
 			//var data=$.parseJSON(StudnetList);
-			$('#searchTable').datagrid({loadFilter:pagerFilter}).datagrid('loadData', PayList); 
-			});
+			$('#searchInvoiceTableStudent').datagrid({loadFilter:pagerFilter}).datagrid('loadData', PayList); 
+			$('#searchInvoiceTableInvoice').datagrid({loadFilter:pagerFilter}).datagrid('loadData', PayList); 
+		});
 			function clickHandler(){
 				var txt_input = document.getElementsByClassName("txt_input");
 				for(var i=0; i<txt_input.length;i++){
@@ -105,6 +106,12 @@
 					txt_upate[i].readOnly=false;
 				}
 			}
+			function formatStuNum(val, rec){
+				return val=rec.id.stuNum;
+				}
+			function formatInvNum(val, rec){
+				return vla=rec.id.invNum;
+				}
 		</script>
 		
 	</head>
@@ -122,12 +129,12 @@
 							</div>		
 						</form>
 
-						<table id="searchInvoiceTable" class="easyui-datagrid" style="width:800px;height:308.5px;" data-options="pagination:true,fitColumns:true,singleSelect:true,collapsible:true,scrollbarSize:0,method:'get'">
+						<table id="searchInvoiceTableInvoice" class="easyui-datagrid" style="width:800px;height:308.5px;" data-options="pagination:true,fitColumns:true,singleSelect:true,collapsible:true,scrollbarSize:0,method:'get'">
 							<thead>
 							<tr>
-							<th data-options="field:'stuNum',width:160,align:'center'">Student ID</th>
-							<th data-options="field:'invNum',width:160,align:'center'">Invoice number</th>
-							<th data-options="field:'payCreateTime',width:160,align:'center'">Create time</th>
+							<th data-options="field:'stuNum', formatter:formatStuNum , width:160,align:'center'">Student ID</th>
+							<th data-options="field:'invNum', formatter:formatInvNum, width:160,align:'center'">Invoice number</th>
+							<th data-options="field:'payCreatTime',width:160,align:'center'">Create time</th>
 							<th data-options="field:'payPayTime',width:160,align:'center'">Pay time</th>
 							<th data-options="field:'payPrice',width:160,align:'center'">Price</th>
 							</tr>
@@ -142,12 +149,12 @@
 							</div>		
 						</form>
 
-						<table id="searchInvoiceTable" class="easyui-datagrid" style="width:800px;height:308.5px;" data-options="pagination:true,fitColumns:true,singleSelect:true,collapsible:true,scrollbarSize:0,method:'get'">
+						<table id="searchInvoiceTableStudent" class="easyui-datagrid" style="width:800px;height:308.5px;" data-options="pagination:true,fitColumns:true,singleSelect:true,collapsible:true,scrollbarSize:0,method:'get'">
 							<thead>
 							<tr>
-							<th data-options="field:'stuNum',width:160,align:'center'">Student ID</th>
-							<th data-options="field:'invNum',width:160,align:'center'">Invoice number</th>
-							<th data-options="field:'payCreateTime',width:160,align:'center'">Create time</th>
+							<th data-options="field:'stuNum', formatter:formatStuNum , width:160,align:'center'">Student ID</th>
+							<th data-options="field:'invNum', formatter:formatInvNum, width:160,align:'center'">Invoice number</th>
+							<th data-options="field:'payCreatTime',width:160,align:'center'">Create time</th>
 							<th data-options="field:'payPayTime',width:160,align:'center'">Pay time</th>
 							<th data-options="field:'payPrice',width:160,align:'center'">Price</th>
 							</tr>

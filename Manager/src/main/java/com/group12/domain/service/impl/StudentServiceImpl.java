@@ -27,12 +27,6 @@ public class StudentServiceImpl implements StudentService{
 		return studentDao.search(id);
 	}
 	
-	public boolean isEmpty(Student student){
-		if(student==null){
-			return false;
-		}
-		return true;
-	}
 	@Transactional
 	public List<Student> getAllStudent() {
 		// TODO Auto-generated method stub		

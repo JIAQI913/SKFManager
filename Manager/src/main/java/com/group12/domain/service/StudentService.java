@@ -10,8 +10,6 @@ public interface StudentService {
 	
 	Student getStudent(int id);
 	
-	boolean isEmpty(Student student);
-	
 	List<Student> getAllStudent();
 	
 	void updateStudent(Student student);

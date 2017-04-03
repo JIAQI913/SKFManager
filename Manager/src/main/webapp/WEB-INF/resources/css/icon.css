@@ -1,5 +1,5 @@
 .icon-blank{
-	background:url('icons/blank.gif') no-repeat center center;
+	background:url('../img/blank.gif') no-repeat center center;
 }
 .icon-add{
 	background:url('icons/edit_add.png') no-repeat center center;
@@ -11,22 +11,22 @@
 	background:url('icons/clear.png') no-repeat center center;
 }
 .icon-remove{
-	background:url('icons/edit_remove.png') no-repeat center center;
+	background:url('../img/edit_remove.png') no-repeat center center;
 }
 .icon-save{
-	background:url('icons/filesave.png') no-repeat center center;
+	background:url('../img/filesave.png') no-repeat center center;
 }
 .icon-cut{
 	background:url('icons/cut.png') no-repeat center center;
 }
 .icon-ok{
-	background:url('icons/ok.png') no-repeat center center;
+	background:url('../img/ok.png') no-repeat center center;
 }
 .icon-no{
-	background:url('icons/no.png') no-repeat center center;
+	background:url('../img/no.png') no-repeat center center;
 }
 .icon-cancel{
-	background:url('icons/cancel.png') no-repeat center center;
+	background:url('../img/cancel.png') no-repeat center center;
 }
 .icon-reload{
 	background:url('icons/reload.png') no-repeat center center;

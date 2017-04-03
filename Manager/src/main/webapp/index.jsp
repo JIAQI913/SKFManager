@@ -22,7 +22,12 @@
 					data : JSON.stringify(user),
 					success : function(data){
 						//alert(data);
-						window.location.href = "/Manager/get"+data;
+						if(data=="Failed"){
+								alert(data);
+							}
+						else{
+							window.location.href = "/Manager/get"+data;
+						}
 						},
 						error : function() {
 							alert("Failed");

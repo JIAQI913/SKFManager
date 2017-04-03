@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>SKF Management Class Info</title>
+		<title>SKF Management Parent Info</title>
 		<link rel="stylesheet" type="text/css" href="css/easyui.css">
 		<link rel="stylesheet" type="text/css" href="css/icon.css">
 		<link rel="stylesheet" type="text/css" href="css/demo.css">
@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
 		<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-		<script type="text/javascript" src="js/ManagerNavigation.js"></script>
+		<script type="text/javascript" src="js/StudentNavigation.js"></script>
 
 		
 		<style type="text/css">
@@ -50,15 +50,15 @@
 	            data.rows = (data.originalRows.slice(start, end));
 	            return data;
 	           }
-		
+        
 		$(window)
 		.load(
 		function(){
-		var ClassList=${ClassList};
+		var ParentList=${ParentList};
 		//var data=$.parseJSON(StudnetList);
-		$('#searchTable').datagrid('loadData', ClassList); 
+		$('#searchTable').datagrid('loadData', ParentList); 
 		});
-		
+
 		function operate(value, row, index) {
 	        return '<a href="#" onclick="editUser('+index+')">Update</a>';
 	    }
@@ -66,7 +66,7 @@
 	        $('#searchTable').datagrid('selectRow', index);
 	        var row = $('#searchTable').datagrid('getSelected');
 	        if (row){
-	            $('#dlg').dialog('open').dialog('setTitle','Edit Class Information');
+	            $('#dlg').dialog('open').dialog('setTitle','Edit Parent Information');
 	            $('#fm').form('load',row);
 	           // url = '';
 	        }
@@ -79,7 +79,6 @@
 		
       
 			<div id="search" style="margin-top: 10%;">
-				
 				<div id="toolbar" style="font-weight: bold;font-size:20px">
 			<!-- 	onclick+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 			        <a href="javascript:void(0)" id="delete" class="easyui-linkbutton" style="width: auto;" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove class information</a>
@@ -87,13 +86,14 @@
 							<table id="searchTable" class="easyui-datagrid" style="width:auto;height:auto" data-options="pagination:true,fitColumns:true,singleSelect:true,collapsible:true,scrollbarSize:0,method:'get'">
 							<thead>
 							<tr>
-							<th data-options="field:'classId',width:130,align:'center'">Class ID</th>
-							<th data-options="field:'classRoom',width:130,align:'center'">Class room</th>
-							<th data-options="field:'classWeekday',width:130,align:'center'">Weekday</th>
-							<th data-options="field:'classStartTime',width:130,align:'center'">Start time</th>
-							<th data-options="field:'classEndTime',width:130,align:'center'">End time</th>
-							<th data-options="field:'classLevel',width:130,align:'center'">Class level</th>
-							<th data-options="field:'classInstructor',width:130,align:'center'">Instructor</th>
+							<th data-options="field:'parNum',width:130,align:'center'">Parent ID</th>
+							<th data-options="field:'stuNum',width:130,align:'center'">Student ID</th>
+							<th data-options="field:'parRelation',width:130,align:'center'">Relation</th>
+							<th data-options="field:'parMobileNum',width:130,align:'center'">Mobile</th>
+							<th data-options="field:'parEmail',width:130,align:'center'">Email</th>
+							<th data-options="field:'parFname',width:130,align:'center'">First Name</th>
+							<th data-options="field:'parLname',width:130,align:'center'">Last Name</th>
+							<th data-options="field:'parInitial',width:130,align:'center'">Initial</th>
 							<th data-options="field:'_operate',align:'center',width:85, formatter:operate">Update</th>
 							</tr>
 							</thead>
@@ -104,25 +104,28 @@
 			<div class="ftitle" style="font-size: 20px;color: #666666;">Class Information</div>
 			<form id="fm" method="post" novalidate>
 				<div class="fitem">
-					<label>Class ID: </label> <input name="classId" class="easyui-textbox" required="true">
+					<label>Parent ID: </label> <input name="parNum" class="easyui-textbox" required="true">
 				</div>
 				<div class="fitem">
-					<label>Class room: </label> <input name="classRoom" class="easyui-textbox" >
+					<label>Student ID: </label> <input name="stuNum" class="easyui-textbox" >
 				</div>
 				<div class="fitem">
-					<label>Weekday: </label> <input name="classWeekday" class="easyui-textbox">
+					<label>Relation: </label> <input name="parRelation" class="easyui-textbox">
 				</div>
 				<div class="fitem">
-					<label>Start time: </label> <input name="classStartTime" class="easyui-textbox">
+					<label>Mobile: </label> <input name="parMobileNum" class="easyui-textbox">
 				</div>
 				<div class="fitem">
-					<label>End time: </label> <input name="classEndTime" class="easyui-textbox" >
+					<label>Email: </label> <input name="parEmail" class="easyui-textbox" >
 				</div>
 				<div class="fitem">
-					<label>Class level: </label> <input name="classLevel" class="easyui-textbox" >
+					<label>Parent first name: </label> <input name="parFname" class="easyui-textbox" >
 				</div>
 				<div class="fitem">
-					<label>Instructor: </label> <input name="classInstructor" class="easyui-textbox" >
+					<label>Parent last name: </label> <input name="parLname" class="easyui-textbox" >
+				</div>
+				<div class="fitem">
+					<label>Initial: </label> <input name="parInitial" class="easyui-textbox" >
 				</div>
 			</form>
 		</div>

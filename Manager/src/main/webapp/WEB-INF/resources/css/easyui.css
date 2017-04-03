@@ -87,10 +87,10 @@
   overflow: hidden;
 }
 .panel-loading {
-  background: url('images/loading.gif') no-repeat 10px 10px;
+  background: url('../img/loading.gif') no-repeat 10px 10px;
 }
 .panel-tool-close {
-  background: url('images/panel_tools.png') no-repeat -16px 0px;
+  background: url('../img/panel_tools.png') no-repeat -16px 0px;
 }
 .panel-tool-min {
   background: url('images/panel_tools.png') no-repeat 0px 0px;

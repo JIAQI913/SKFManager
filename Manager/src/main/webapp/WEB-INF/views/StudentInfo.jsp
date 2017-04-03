@@ -79,12 +79,7 @@
 					txt_input[i].readOnly=false;
 				}
 			}
-			function clickHandler1(){
-				var txt_upate = document.getElementsByClassName("txt_update");
-				for(var i=0; i<txt_upate.length;i++){
-					txt_upate[i].readOnly=false;
-				}
-			}
+			
 			function update(){
 				var student={
 						stuFname: document.getElementById('txt_FName').value,
@@ -119,9 +114,7 @@
 		<div id="container">
 			
 			
-			<div id="search" style="margin-top: 10%;">
-				<div class="easyui-tabs" style="width:1080px;height:auto;color:#AAAAAA">
-					<div title="Student" style="margin: 20px">
+					
 						<form action="" method="post" id="searchForm" class="form">
 							<div>
 								<table align="center" style="font-size: 16px; font-family: 'comic sans ms'; fon" >
@@ -180,66 +173,10 @@
 							</div>		
 						</form>
 					</div>
-					<div title="Parents" style="margin: 20px">
-						<form action="" method="post" id="searchForm" class="form">
-							<div>
-								<table align="center" style="font-size: 16px; font-family: 'comic sans ms'; fon" >
-									<tr>
-										<td align="right">Student name: </td>
-										<td>
-											<input class="txt_update" id="txt_StudentName" type="text" readonly="true" />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">Parent First Name : </td>
-										<td>
-											<input class="txt_update" id="txt_PFirstName" type="text" readonly="true" />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">Parent Last Name: </td>
-										<td>
-											<input class="txt_update" id="txt_PLastName" type="text" readonly="true" />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">Relation: </td>
-										<td>
-											<input class="txt_update" id="txt_ParentRelation" type="text" readonly="true" />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">Mobile: </td>
-										<td>
-											<input class="txt_update" id="txt_ParentMobile" type="text" readonly="true" />
-										</td>
-									</tr>
-									<tr>
-										<td align="right">Email: </td>
-										<td>
-											<input class="txt_update" id="txt_ParentEmail" type="text" readonly="true" />
-										</td> 
-									</tr>
-									<tr>
-                                         <td align="center">
-                                                <input id="btn_changeParents" type="button" value="Change" onclick="clickHandler1()"/>
-                                         </td>
-                                         <td align="center">
-                                                <input id="btn_updateParents" type="submit" value="Update" onclick="update1()"/>
-                                         </td>
-                                  </tr>
-
-								</table>
-								
-							</div>		
-						</form>
-					</div>
+					
 					
 						
-				</div>
-			</div>
-			
-		</div>	
+				
 			
 			
 	</body>
