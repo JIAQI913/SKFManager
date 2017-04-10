@@ -22,4 +22,10 @@ public class InvoiceDaolmpl implements InvoiceDao {
 		return session.save(invoice);
 	}
 
+	public Invoice search(int id) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		return (Invoice) session.get(Invoice.class, id);
+	}
+
 }

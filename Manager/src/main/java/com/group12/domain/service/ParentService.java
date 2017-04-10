@@ -15,4 +15,6 @@ public interface ParentService {
 	void updateParent(Parent parent);
 	
 	List<Parent> getParentS(int studentId);
+	
+	void deleteParent(int id);
 }

@@ -1,12 +1,10 @@
 package com.group12.domain.entity;
-// Generated Apr 2, 2017 1:34:23 PM by Hibernate Tools 4.3.5.Final
+// Generated Apr 9, 2017 5:30:06 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
-import javax.persistence.AttributeOverride;
-import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -18,34 +16,56 @@ import javax.persistence.TemporalType;
 @Table(name = "attain", catalog = "SKF")
 public class Attain implements java.io.Serializable {
 
-	private AttainId id;
+	private int invNum;
+	private int rankNum;
+	private int stuNum;
 	private Date rankTestTime;
 	private Boolean rankIsPassed;
 
 	public Attain() {
 	}
 
-	public Attain(AttainId id) {
-		this.id = id;
+	public Attain(int invNum, int rankNum, int stuNum) {
+		this.invNum = invNum;
+		this.rankNum = rankNum;
+		this.stuNum = stuNum;
 	}
 
-	public Attain(AttainId id, Date rankTestTime, Boolean rankIsPassed) {
-		this.id = id;
+	public Attain(int invNum, int rankNum, int stuNum, Date rankTestTime, Boolean rankIsPassed) {
+		this.invNum = invNum;
+		this.rankNum = rankNum;
+		this.stuNum = stuNum;
 		this.rankTestTime = rankTestTime;
 		this.rankIsPassed = rankIsPassed;
 	}
 
-	@EmbeddedId
+	@Id
 
-	@AttributeOverrides({ @AttributeOverride(name = "rankNum", column = @Column(name = "Rank_Num", nullable = false)),
-			@AttributeOverride(name = "stuNum", column = @Column(name = "Stu_Num", nullable = false)),
-			@AttributeOverride(name = "invNum", column = @Column(name = "Inv_Num", nullable = false)) })
-	public AttainId getId() {
-		return this.id;
+	@Column(name = "Inv_Num", unique = true, nullable = false)
+	public int getInvNum() {
+		return this.invNum;
 	}
 
-	public void setId(AttainId id) {
-		this.id = id;
+	public void setInvNum(int invNum) {
+		this.invNum = invNum;
+	}
+
+	@Column(name = "Rank_Num", nullable = false)
+	public int getRankNum() {
+		return this.rankNum;
+	}
+
+	public void setRankNum(int rankNum) {
+		this.rankNum = rankNum;
+	}
+
+	@Column(name = "Stu_Num", nullable = false)
+	public int getStuNum() {
+		return this.stuNum;
+	}
+
+	public void setStuNum(int stuNum) {
+		this.stuNum = stuNum;
 	}
 
 	@Temporal(TemporalType.TIMESTAMP)

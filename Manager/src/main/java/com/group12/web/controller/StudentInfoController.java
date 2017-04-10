@@ -52,7 +52,7 @@ public class StudentInfoController {
 	@ResponseBody
 	@RequestMapping("/changeStudent")
 	public String changeStudent(@RequestBody Student student, HttpServletRequest req, HttpServletResponse resp){
-		System.out.println(student.getStuEmail());
+//		System.out.println(student.getStuEmail());
 		HttpSession session = req.getSession();
 		User user=(User)session.getAttribute("USER");
 		if(user==null){

@@ -16,4 +16,6 @@ public interface ParentDao {
 	void update(Parent parent);
 	
 	List<Parent> getParentS(int studentId);
+	
+	void delete(int id);
 }

@@ -1,5 +1,5 @@
 package com.group12.domain.entity;
-// Generated Apr 2, 2017 1:34:23 PM by Hibernate Tools 4.3.5.Final
+// Generated Apr 9, 2017 5:30:06 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.Column;

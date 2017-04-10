@@ -8,7 +8,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
@@ -44,5 +46,21 @@ public class MCheckStudentInfoController {
 			return modelAndView;
 		}
 		return modelAndView;
+	}
+	
+	@ResponseBody
+	@RequestMapping("/changeStudentM")
+	public String changeStudentM(@RequestBody Student student, HttpServletRequest req, HttpServletResponse resp){
+//		System.out.println(student.getStuEmail());
+		HttpSession session = req.getSession();
+		User user=(User)session.getAttribute("USER");
+		if(user==null){
+			return "Index";
+		}
+		if(user.getStuNum()!=null){
+			return "Index";
+		}
+		studentService.updateStudent(student);
+		return "MCheckStudentInfo";
 	}
 }

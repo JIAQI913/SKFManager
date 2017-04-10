@@ -1,5 +1,5 @@
 package com.group12.domain.entity;
-// Generated Apr 2, 2017 1:34:23 PM by Hibernate Tools 4.3.5.Final
+// Generated Apr 9, 2017 5:30:06 PM by Hibernate Tools 4.3.5.Final
 
 import java.util.Date;
 import javax.persistence.AttributeOverride;
@@ -22,6 +22,7 @@ public class Payment implements java.io.Serializable {
 	private Date payCreatTime;
 	private Date payPayTime;
 	private float payPrice;
+	private Boolean payFailed;
 
 	public Payment() {
 	}
@@ -32,11 +33,12 @@ public class Payment implements java.io.Serializable {
 		this.payPrice = payPrice;
 	}
 
-	public Payment(PaymentId id, Date payCreatTime, Date payPayTime, float payPrice) {
+	public Payment(PaymentId id, Date payCreatTime, Date payPayTime, float payPrice, Boolean payFailed) {
 		this.id = id;
 		this.payCreatTime = payCreatTime;
 		this.payPayTime = payPayTime;
 		this.payPrice = payPrice;
+		this.payFailed = payFailed;
 	}
 
 	@EmbeddedId
@@ -78,6 +80,15 @@ public class Payment implements java.io.Serializable {
 
 	public void setPayPrice(float payPrice) {
 		this.payPrice = payPrice;
+	}
+
+	@Column(name = "Pay_Failed")
+	public Boolean getPayFailed() {
+		return this.payFailed;
+	}
+
+	public void setPayFailed(Boolean payFailed) {
+		this.payFailed = payFailed;
 	}
 
 }

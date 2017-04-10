@@ -44,5 +44,10 @@ public class ParentServiceImpl implements ParentService{
 		// TODO Auto-generated method stub
 		return parentDao.getParentS(studentId);
 	}
+	@Transactional
+	public void deleteParent(int id) {
+		// TODO Auto-generated method stub
+		parentDao.delete(id);
+	}
 	
 }

@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.group12.domain.dao.PaymentDao;
 import com.group12.domain.entity.Payment;
+import com.group12.domain.entity.PaymentId;
 import com.group12.domain.service.PaymentService;
 
 @Service
@@ -19,6 +20,21 @@ public class PaymentServiceImpl implements PaymentService{
 	public List<Payment> getAllPayment() {
 		// TODO Auto-generated method stub
 		return paymentDao.getAllPayment();
+	}
+	@Transactional
+	public List<Payment> searchByInvNum(int invNum) {
+		// TODO Auto-generated method stub
+		return paymentDao.searchByInvNum(invNum);
+	}
+	@Transactional
+	public List<Payment> searchByStuNum(int stuNum) {
+		// TODO Auto-generated method stub
+		return paymentDao.searchByStuNum(stuNum);
+	}
+	@Transactional
+	public void paid(PaymentId id) {
+		// TODO Auto-generated method stub
+		paymentDao.paid(id);
 	}
 
 }

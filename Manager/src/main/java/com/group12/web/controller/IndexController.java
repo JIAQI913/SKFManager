@@ -1,9 +1,5 @@
 package com.group12.web.controller;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.Date;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -46,7 +42,7 @@ public class IndexController {
 	@ResponseBody
 	@RequestMapping("/getIndex")
 	public String login(@RequestBody User user, HttpServletRequest req, HttpServletResponse resp){
-		System.out.println("get");
+//		System.out.println("get");
 //		String userName=user.getUserName();
 //		String userPassword=user.getUserPassword();
 //		System.out.println(user.getUserName()+"\n"+ user.getUserPassword());

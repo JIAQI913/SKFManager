@@ -9,4 +9,8 @@ public interface ClassService {
 	Serializable insertData(Class c);
 	
 	List<Class> getAllClass();
+	
+	void update(Class c);
+	
+	void delete(int id);
 }

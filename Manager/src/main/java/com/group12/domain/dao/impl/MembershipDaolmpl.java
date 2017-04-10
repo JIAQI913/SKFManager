@@ -22,4 +22,17 @@ public class MembershipDaolmpl implements MembershipDao {
 		return session.save(membership);
 	}
 
+	public Membership searchByInv(int id) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		return (Membership) session.get(Membership.class, id);
+	}
+
+	public void update(Membership membership) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		session.update(membership);
+		session.flush();
+	}
+
 }

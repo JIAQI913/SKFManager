@@ -10,4 +10,8 @@ public interface ClassDao {
 	Serializable save(Class c);
 	
 	List<Class> getAllClass();
+	
+	void update(Class c);
+	
+	void delete(int id);
 }

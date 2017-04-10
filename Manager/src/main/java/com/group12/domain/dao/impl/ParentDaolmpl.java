@@ -49,8 +49,14 @@ public class ParentDaolmpl implements ParentDao {
 	public List<Parent> getParentS(int studentId) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		Query query=session.createQuery("from Parent where id = ?").setParameter(0, studentId);
+		Query query=session.createQuery("from Parent where stuNum = ?").setParameter(0, studentId);
 		return query.list();
 	}
 
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		session.delete(session.get(Parent.class, id));
+		session.flush();
+	}
 }

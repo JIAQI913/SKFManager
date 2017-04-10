@@ -6,4 +6,6 @@ import com.group12.domain.entity.Invoice;
 
 public interface InvoiceDao {
 	Serializable save(Invoice invoice);
+	
+	Invoice search(int id);
 }

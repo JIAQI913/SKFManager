@@ -28,5 +28,15 @@ public class ClassServiceImpl implements ClassService{
 		// TODO Auto-generated method stub
 		return classDao.getAllClass();
 	}
+	@Transactional
+	public void update(Class c) {
+		// TODO Auto-generated method stub
+		classDao.update(c);
+	}
+	@Transactional
+	public void delete(int id) {
+		// TODO Auto-generated method stub
+		classDao.delete(id);
+	}
 
 }
