@@ -23,7 +23,9 @@ public class PaymentDaolmpl implements PaymentDao {
 	public Serializable save(Payment payment) {
 		// TODO Auto-generated method stub
 		Session session = sessionFactory.getCurrentSession();
-		return session.save(payment);
+		Serializable rs= session.save(payment);
+		session.flush();
+		return rs;
 	}
 
 	public List<Payment> getAllPayment() {

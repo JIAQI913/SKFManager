@@ -1,5 +1,6 @@
 package com.group12.domain.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.group12.domain.entity.Attain;
@@ -14,4 +15,6 @@ public interface AttainService {
 	void delete(int id);
 	
 	Attain searchByInv(int id);
+	
+	Serializable insert(Attain attain);
 }

@@ -37,6 +37,11 @@ public class RankServiceImpl implements RankService{
 		// TODO Auto-generated method stub
 		rankDao.delete(id);
 	}
+	@Transactional
+	public int getNum(String belt) {
+		// TODO Auto-generated method stub
+		return rankDao.getNum(belt);
+	}
 	
 	
 }

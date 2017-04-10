@@ -1,5 +1,6 @@
 package com.group12.domain.service.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +36,11 @@ public class PaymentServiceImpl implements PaymentService{
 	public void paid(PaymentId id) {
 		// TODO Auto-generated method stub
 		paymentDao.paid(id);
+	}
+	@Transactional
+	public Serializable insert(Payment payment) {
+		// TODO Auto-generated method stub
+		return paymentDao.save(payment);
 	}
 
 }

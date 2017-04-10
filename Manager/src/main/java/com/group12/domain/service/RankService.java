@@ -13,4 +13,6 @@ public interface RankService {
 	void update(Rank rank);
 	
 	void delete(int id);
+	
+	int getNum(String belt);
 }

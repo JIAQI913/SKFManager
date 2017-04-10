@@ -21,7 +21,9 @@ public class AttainDaolmpl implements AttainDao{
 	public Serializable save(Attain attain) {
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
-		return session.save(attain);
+		Serializable res= session.save(attain);
+		session.flush();
+		return res;
 	}
 	public List<Attain> getAllAttain() {
 		// TODO Auto-generated method stub

@@ -1,5 +1,7 @@
 package com.group12.domain.service.impl;
 
+import java.io.Serializable;
+
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,11 @@ public class InvoiceServiceImpl implements InvoiceService{
 	public Invoice searchById(int id) {
 		// TODO Auto-generated method stub
 		return invoiceDao.search(id);
+	}
+	@Transactional
+	public Serializable insert(Invoice invoice) {
+		// TODO Auto-generated method stub
+		return invoiceDao.save(invoice);
 	}
 
 }

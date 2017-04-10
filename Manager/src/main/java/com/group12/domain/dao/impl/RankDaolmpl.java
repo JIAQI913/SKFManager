@@ -48,4 +48,12 @@ public class RankDaolmpl implements RankDao {
 		session.flush();
 	}
 
+	public int getNum(String belt) {
+		// TODO Auto-generated method stub
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("from Rank where rankBelt=?").setParameter(0, belt);
+		List<Rank> list=query.list();
+		return list.get(0).getRankNum();
+	}
+
 }

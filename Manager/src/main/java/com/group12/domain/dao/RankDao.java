@@ -13,4 +13,6 @@ public interface RankDao {
 	void Update(Rank rank);
 	
 	void delete(int id);
+	
+	int getNum(String belt);
 }

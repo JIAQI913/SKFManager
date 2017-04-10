@@ -1,5 +1,6 @@
 package com.group12.domain.service;
 
+import java.io.Serializable;
 import java.util.List;
 
 import com.group12.domain.entity.Payment;
@@ -13,4 +14,6 @@ public interface PaymentService {
 	List<Payment> searchByStuNum(int stuNum);
 	
 	void paid(PaymentId id);
+	
+	Serializable insert(Payment payment);
 }

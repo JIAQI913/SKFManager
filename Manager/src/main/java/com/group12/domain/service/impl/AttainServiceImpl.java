@@ -1,5 +1,6 @@
 package com.group12.domain.service.impl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,6 +41,11 @@ public class AttainServiceImpl implements AttainService{
 	public Attain searchByInv(int id) {
 		// TODO Auto-generated method stub
 		return attainDao.searchByInv(id);
+	}
+	@Transactional
+	public Serializable insert(Attain attain) {
+		// TODO Auto-generated method stub
+		return attainDao.save(attain);
 	}
 
 }
